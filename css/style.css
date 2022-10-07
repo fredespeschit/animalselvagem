@@ -1,25 +1,81 @@
 body,
 h1,
-h2,
-h3,
 ul,
 li,
 p,
-dd,
-dt,
-dl {
+blockquote {
     margin: 0px;
     padding: 0px;
 }
 
-ul {
+li {
     list-style: none;
 }
 
-img{
+a {
+    text-decoration: none;
+}
+
+body{
+    font-family: Georgia, serif;
+}
+img {
     max-width: 100px;
 }
 
-.estrutura{
+
+/* GRID GERAL */
+
+.estrutura {
     display: grid;
+    grid-template-columns: minmax(160px, 1fr) 3fr 300px;
+    grid-template-areas: 
+    "header header header"
+    "sidenav conteudo anuncios"
+    "rodape rodape rodape"
+    ;
+}
+
+.header{
+    background-color: blueviolet;
+    grid-area: header;
+}
+
+.sidenav {
+    background-color: coral;
+    grid-area: sidenav;
+}
+
+.conteudo {
+    background-color: aqua;
+    grid-area: conteudo;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "titulo caracteristicas"
+    "primeiro-p primeiro-p"
+
+    ;
+}
+.titulo{
+    background-color: darkolivegreen;
+    grid-area: titulo;
+}
+.caracteristicas{
+    background-color: cornflowerblue;
+    grid-area: caracteristicas;
+}
+
+.primeiro-p{
+    background-color: azure;
+    grid-area: primeiro-p;
+}
+.anuncios {
+    background-color: rgb(30, 92, 92);
+    grid-area: anuncios;
+}
+
+.rodape {
+    background-color: crimson;
+    grid-area: rodape;
 }
